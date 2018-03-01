@@ -14,7 +14,8 @@
 		"css:prettify": "npx prettier --parser=css --write \"src/**/*.css\"",
 		"css:lint": "npx stylelint \"src/**/*.css\" --fix",
 		"css:format": "npm run css:prettify && npm run css:lint",
-		"format": "npm run css:format && npm run js:prettify"
+    "format": "npm run css:format && npm run js:prettify",
+    "precommit": "npx lint-staged"
 	},
 	"author": "Naomi Hauret",
 	"license": "MIT",
@@ -69,10 +70,13 @@
 		"not samsung <= 7"
 	],
 	"lint-staged": {
-		"**/*.{js,jsx}": ["npx prettier --parser=babylon --write \"src/**/*.js\"", "npx eslint \"src/**/*.js\" --fix"],
-		"src/**/*.test.js": [
+		"**/*.{js,jsx}": [
 			"npx prettier --parser=babylon --write \"src/**/*.js\""
 		],
-		"**/*.css": ["npx prettier --parser=css --write \"src/**/*.css\"", "npx stylelint --fix \"src/**/*.css\"", "git add"]
+		"**/*.css": [
+			"npx prettier --parser=css --write \"src/**/*.css\"",
+			"npx stylelint --fix \"src/**/*.css\"",
+			"git add"
+		]
 	}
 }

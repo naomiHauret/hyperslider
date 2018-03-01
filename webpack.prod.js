@@ -46,16 +46,16 @@ module.exports = merge(common, {
 				safari10: false,
 			},
 		}),
-		new PurifyCSSPlugin({
-			purifyOptions: {
-				whitelist: ["body", "html", "*purr*"],
-			},
-			minimize: true,
-			paths: glob.sync([
-				path.join(__dirname, "src/views/**/*.js"),
-				path.join(__dirname, "src/assets/css/**/*.css"),
-			]),
-		}),
+			// new PurifyCSSPlugin({
+		// 	purifyOptions: {
+		// 		whitelist: ["body", "html", "*purr*"],
+		// 	},
+		// 	minimize: true,
+		// 	paths: glob.sync([
+		// 		path.join(__dirname, "src/views/**/*.js"),
+		// 		path.join(__dirname, "src/assets/css/**/*.css"),
+		// 	]),
+		// }),
 		new ResourceHintPlugin(),
 		new HtmlPlugin({
 			template: "./src/index.html",
@@ -68,8 +68,8 @@ module.exports = merge(common, {
 				removeRedundantAttributes: true,
 			},
 		}),
-		new StyleExtHtmlPlugin({
+/* 		new StyleExtHtmlPlugin({
 			minify: true,
-		}),
+		}), */
 	],
 })
