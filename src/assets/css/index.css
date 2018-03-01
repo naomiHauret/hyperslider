@@ -1,0 +1,90 @@
+/* stylelint-disable */
+@import-normalize;
+@tailwind utilities;
+/* stylelint-enable */
+
+:root {
+	--fontSizeBase: 16px; /* stylelint-disable-line */
+}
+
+html {
+	font-size: var(--fontSizeBase);
+}
+
+body {
+	font-size: 1rem;
+}
+
+.swappable {
+	padding: 2.25rem;
+	border: 0.25rem solid lightblue;
+	margin: 0 0.5rem;
+	transition: all 350ms ease-in-out;
+	
+	&:hover {
+		background-color: white;
+		color: blue;
+		border-color: blue;
+		cursor: pointer;
+	}
+}
+
+.is-dragged {
+  background-color: blue !important;
+	color: white !important;
+}
+
+.is-slipzone {
+	margin-right: 5.5rem;
+	position: relative;
+	
+	&::after {
+		color: blue;
+		position: absolute;
+		right: -5.85rem;
+		top: 0;
+		width: 5rem;
+		height: 100%;
+		content: " ";
+		border: dashed 3px currentColor;
+		background-image:
+    radial-gradient(currentColor 10%, transparent 0), 
+    radial-gradient(currentColor 10%, transparent 0);
+  		background-size: 2rem 2rem;
+  		background-position: 0 0, 1rem 1rem;
+  		animation: move infinite linear 650ms;
+	}
+}
+
+@keyframes move {
+  from {
+      background-position: 0 0, 1rem 1rem;
+  }
+  
+  to {
+      background-position: 1rem 1rem, 2rem 2rem;
+  }
+}
+
+main {
+	margin-top: 5rem;
+}
+
+.instruction {
+	text-align: center;
+	margin-top: 5rem;
+	
+	span {
+		color: blue;
+		padding: 1rem 2rem;
+		margin: 0 0.5rem;
+		display: inline-block;
+				border: dashed 0.15rem currentColor;
+		background-image:
+    radial-gradient(currentColor 10%, transparent 0), 
+    radial-gradient(currentColor 10%, transparent 0);
+  		background-size: 2rem 2rem;
+  		background-position: 0 0, 1rem 1rem;
+  		animation: move infinite linear 650ms;
+	}
+}
