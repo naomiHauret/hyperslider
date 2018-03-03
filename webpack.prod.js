@@ -46,7 +46,7 @@ module.exports = merge(common, {
 				safari10: false,
 			},
 		}),
-			// new PurifyCSSPlugin({
+		// new PurifyCSSPlugin({
 		// 	purifyOptions: {
 		// 		whitelist: ["body", "html", "*purr*"],
 		// 	},
@@ -68,7 +68,7 @@ module.exports = merge(common, {
 				removeRedundantAttributes: true,
 			},
 		}),
-/* 		new StyleExtHtmlPlugin({
+		/* 		new StyleExtHtmlPlugin({
 			minify: true,
 		}), */
 	],
