@@ -6,6 +6,7 @@ import SliderItemImage from "./../SliderItemImage"
 
 export default ({ item, actions, state }) => (
 	<div
+		style={"position: relative;"}
 		title={state.isEditor === true && "Drag me to change my position"}
 		key={item.id}
 		active={item.isActive}

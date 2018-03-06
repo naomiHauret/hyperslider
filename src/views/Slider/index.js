@@ -1,5 +1,5 @@
 import { h } from "hyperapp"
-import compareValues from "./../../utils"
+import compareValues from "./../../utils/compareValues"
 import SliderItem from "./../SliderItem"
 
 export default ({ state, actions }) => (
