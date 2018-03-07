@@ -10,5 +10,5 @@ import "./assets/css/index.css"
 const view = (state, actions) => <App state={state} actions={actions} />
 
 process.env.NODE_ENV === "production"
-    ? app(state, actions, view, document.body)
-    : logger()(app)(state, actions, view, document.body)
+	? app(state, actions, view, document.body)
+	: logger()(app)(state, actions, view, document.body)
