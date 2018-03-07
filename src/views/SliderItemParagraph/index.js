@@ -10,20 +10,7 @@ export default ({ actions, state, id, paragraph }) =>
 	) : (
 		paragraph.text !== null &&
 		paragraph.text.trim() !== "" && (
-			<p
-				onmousedown={(e) =>
-					state.isEditor === true &&
-					state.isSliderFullview === true &&
-					actions.moveParagraph({
-						x: e.pageX,
-						y: e.pageY,
-						offsetX: e.offsetX,
-						offsetY: e.offsetY,
-						width: e.target.offsetWidth,
-						id: id,
-					})
-				}
-			>
+			<p>
 				{paragraph.text}
 			</p>
 		)

@@ -10,20 +10,7 @@ export default ({ actions, state, id, subtitle }) =>
 	) : (
 		subtitle.text !== null &&
 		subtitle.text.trim() !== "" && (
-			<h2
-				onmousedown={(e) =>
-					state.isEditor === true &&
-					state.isSliderFullview === true &&
-					actions.moveSubTitle({
-						x: e.pageX,
-						y: e.pageY,
-						offsetX: e.offsetX,
-						offsetY: e.offsetY,
-						width: e.target.offsetWidth,
-						id: id,
-					})
-				}
-			>
+			<h2>
 				{subtitle.text}
 			</h2>
 		)
