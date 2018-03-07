@@ -8,10 +8,5 @@ export default ({ actions, state, id, paragraph }) =>
 			title={state.isEditor === true && "Click me to edit paragraph"}
 		/>
 	) : (
-		paragraph.text !== null &&
-		paragraph.text.trim() !== "" && (
-			<p>
-				{paragraph.text}
-			</p>
-		)
+		paragraph.text !== null && paragraph.text.trim() !== "" && <p>{paragraph.text}</p>
 	)

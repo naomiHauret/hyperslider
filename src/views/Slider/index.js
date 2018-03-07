@@ -8,7 +8,7 @@ import SliderItem from "./../SliderItem"
 export default ({ state, actions }) => (
 	<div className="h-full">
 		<div className="h-full flex">
-			{(state.isSliderFullview === true  || state.isEditor === false) && (
+			{(state.isSliderFullview === true || state.isEditor === false) && (
 				<button
 					className={`
 						fixed

@@ -8,10 +8,5 @@ export default ({ actions, state, id, subtitle }) =>
 			title={state.isEditor === true && "Click me to edit subtitle"}
 		/>
 	) : (
-		subtitle.text !== null &&
-		subtitle.text.trim() !== "" && (
-			<h2>
-				{subtitle.text}
-			</h2>
-		)
+		subtitle.text !== null && subtitle.text.trim() !== "" && <h2>{subtitle.text}</h2>
 	)
