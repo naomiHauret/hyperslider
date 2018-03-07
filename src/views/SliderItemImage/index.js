@@ -1,7 +1,7 @@
 import { h } from "hyperapp"
 
 export default ({ state, actions, image, id }) =>
-	state.isEditor === true && (
+	state.isEditor === true ? (
 		<div>
 			<div>
 				<input
@@ -20,5 +20,9 @@ export default ({ state, actions, image, id }) =>
 				/>
 				<img src={image} />
 			</div>
+		</div>
+	) : (
+		<div>
+			<img src={image} />
 		</div>
 	)

@@ -1,14 +1,12 @@
 import { h } from "hyperapp"
 
 export default ({ actions, state, id, subtitle }) =>
-	state.isEditor === true && state.isSliderFullview === false ? (
-		<input
+	state.isEditor === true ? <input
 			value={subtitle.text}
 			oninput={(e) => actions.editSubTitle({ id: id, text: e.target.value })}
-			title={state.isEditor === true && "Click me to edit title"}
+			title={state.isEditor === true && "Click me to edit subtitle"}
 		/>
-	) : (
-		<h2
+	: subtitle.text !== null && subtitle.text.trim() !== "" && <h2
 			onmousedown={(e) =>
 				state.isEditor === true &&
 				state.isSliderFullview === true &&
@@ -24,4 +22,4 @@ export default ({ actions, state, id, subtitle }) =>
 		>
 			{subtitle.text}
 		</h2>
-	)
+
