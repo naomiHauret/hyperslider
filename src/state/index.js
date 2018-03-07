@@ -138,7 +138,7 @@ export default {
 		},
 	],
 	isEditor: true,
-	isSliderFullview: true,
+	isSliderFullview: false,
 	movingElement: false,
 	x: 0,
 	y: 0,

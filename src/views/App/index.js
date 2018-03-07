@@ -15,7 +15,7 @@ export default ({ state, actions }) => (
 			if (state.isEditor === true && state.isSliderFullview === true) return actions.move({ x: e.pageX, y: e.pageY })
 		}}
 	>
-		<div class="fixed pin-t pin-r z-20">
+		<div className="fixed pin-t pin-r z-20">
 			<ToggleMode state={state} actions={actions} />
 			{state.isEditor === true && (
 				<div className="">
@@ -25,7 +25,7 @@ export default ({ state, actions }) => (
 		</div>
 
 		<Slider state={state} actions={actions} />
-		{state.isEditor === false && (
+		{(state.isEditor === false || state.isSliderFullview === true) && (
 			<div>
 				<div>
 					{state.items.map((el) => el.id === state.currentItem.id && el.position + 1)}/{state.items.length}

@@ -12,11 +12,7 @@ export default ({ item, actions, state }) => {
 		<div
 			key={item.id}
 			active={item.isActive}
-			className={`
-					title={state.isEditor === true && "Drag me to change my position"}
-				swappable
-				${item.isDragging === true ? "is-dragged" : ""}
-				${item.isSlipZone === true ? "is-slipzone" : ""}`}
+			title={state.isEditor === true && state.isSliderFullview === false && "Drag me to change my position"}
 			className={cc({
 				transition: true,
 				"w-48": state.isEditor === true && state.isSliderFullview === false,
@@ -65,7 +61,7 @@ export default ({ item, actions, state }) => {
 			ondrop={(e) => {
 				if (state.isEditor === true) return actions.isDropped({ id: item.id, position: item.position })
 			}}
-			draggable={state.isEditor === true}
+			draggable={state.isEditor === true && state.isSliderFullview === false ? true : false}
 		>
 			<SliderItemTitle actions={actions} state={state} title={item.title} id={item.id} />
 			<SliderItemSubtitle actions={actions} state={state} subtitle={item.subtitle} id={item.id} />
