@@ -18,8 +18,7 @@ export default ({ state, actions }) => (
 						${cxs({
 							top: "50%",
 							transform: "translateY(-50%) rotate(90deg)",
-						}
-					)}`}
+						})}`}
 					onclick={(e) =>
 						actions.goToPreviousSlide({
 							position: state.currentItem.position,
@@ -39,8 +38,7 @@ export default ({ state, actions }) => (
 						${cxs({
 							top: "50%",
 							transform: "translateY(-50%) rotate(-90deg)",
-						}
-					)}`}
+						})}`}
 					onclick={(e) =>
 						actions.goToNextSlide({
 							position: state.currentItem.position,
@@ -52,9 +50,9 @@ export default ({ state, actions }) => (
 			)}
 			<div
 				className={cc({
-					"flex": true,
+					flex: true,
 					"flex-1": true,
-					"transition": true,
+					transition: true,
 					"flex-wrap": state.isEditor === true && state.isSliderFullview === false,
 					"justify-center": state.isEditor === true && state.isSliderFullview === false,
 					"items-center": state.isEditor === true && state.isSliderFullview === false,

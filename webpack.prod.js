@@ -51,10 +51,7 @@ module.exports = merge(common, {
 				whitelist: ["body", "html", "*purr*"],
 			},
 			minimize: true,
-			paths: glob.sync([
-				path.join(__dirname, "src/views/**/*.js"),
-				path.join(__dirname, "src/assets/css/**/*.css"),
-			]),
+			paths: glob.sync([path.join(__dirname, "src/views/**/*.js"), path.join(__dirname, "src/assets/css/**/*.css")]),
 		}),
 		new ResourceHintPlugin(),
 		new HtmlPlugin({
