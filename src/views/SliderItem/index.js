@@ -25,7 +25,7 @@ export default ({ item, actions, state }) => {
 			}
 			className={cc({
 				"transition relative": true,
-				"w-64 h-64 bg-grey-lighter hover:bg-grey-light": state.isEditor === true && state.isSliderFullview === false,
+				"w-64 h-128 bg-grey-lighter hover:bg-grey-light": state.isEditor === true && state.isSliderFullview === false,
 				"cursor-move": state.isEditor === true && state.isSliderFullview === false && item.isDragging === false,
 				"cursor-grab": state.isEditor === true && state.isSliderFullview === false && item.isDragging === true,
 				hidden: (state.isSliderFullview === true || state.isEditor === false) && item.id !== state.currentItem.id,

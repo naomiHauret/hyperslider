@@ -9,7 +9,7 @@ export default ({ actions, state, id, subtitle }) =>
 				"transition relative pin-none z-20 bg-transparent": true,
 				"text-base my-4 border-t-0 border-l-0 border-r-0 border-b-2 border-grey border-dashed focus:border-solid p-2":
 					state.isSliderFullview === false,
-				"text-3xl font-serif text-white text-center border-t-0 border-l-0 mt-4 mb-8 border-r-0 border-b-2 border-white":
+				"text-3xl font-serif text-white text-center border-t-0 border-l-0 mt-4 mb-8 border-r-0 border-b-2 border-white w-sm":
 					state.isSliderFullview === true,
 			})}
 			tabindex="2"
@@ -36,7 +36,7 @@ export default ({ actions, state, id, subtitle }) =>
 	) : (
 		subtitle.text !== null &&
 		subtitle.text.trim() !== "" && (
-			<h2 className="relative pin-none z-20 text-3xl font-serif text-center text-white mt-4 mb-8 border-r-0">
+			<h2 className="relative pin-none z-20 text-3xl font-serif text-center text-white mt-4 mb-8 border-r-0  w-sm">
 				{subtitle.text}
 			</h2>
 		)

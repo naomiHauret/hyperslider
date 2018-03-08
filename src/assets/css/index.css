@@ -24,6 +24,7 @@ html {
 
 body {
 	font-size: 1rem;
+	overflow-y: hidden;
 	@apply .font-sans;
 }
 
@@ -40,6 +41,7 @@ button {
 	padding: 0.5em 1.25em;
 	letter-spacing: 0.25em;
 	mix-blend-mode: difference;
+	text-transform: uppercase;
 
 	&:focus,
 	&:hover {

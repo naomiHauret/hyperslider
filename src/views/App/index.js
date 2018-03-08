@@ -61,17 +61,11 @@ export default ({ state, actions }) => (
 			}}
 		/>
 		{state.isSliderFullview === true && (
-			<div className="fixed pin-b pin-l w-full">
+			<div className="fixed pin-b pin-l w-full text-white text-4xl font-serif text-right p-4">
 				<div>
 					{state.items.map((el) => el.id === state.currentItem.id && el.position + 1)}/{state.items.length}
 				</div>
 			</div>
 		)}
-		{state.isEditor === true &&
-			state.isSliderFullview === false && (
-				<h1>
-					To change the order, drag and drop the card in <span> this </span> zone
-				</h1>
-			)}
 	</main>
 )

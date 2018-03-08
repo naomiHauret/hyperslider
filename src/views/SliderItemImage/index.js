@@ -18,11 +18,13 @@ export default ({ state, actions, image, id }) => {
 				${previewerWrapperStyle}
 				${state.isSliderFullview === false ? cxs({ bottom: "-10%", right: "-15%", transform: "rotate(-5deg)" }) : ""}`}
 		>
-			<div className={ cc({
+			<div
+				className={cc({
 					"relative h-full w-full z-10": true,
 					"bg-grey-lightest": state.isSliderFullview === false && state.isEditor === true,
 					"bg-grey-light": state.isSliderFullview === true && state.isEditor === true,
-				})}>
+				})}
+			>
 				<input
 					className={cc({
 						"absolute pin-t pin-l h-full w-full z-10 cursor-pointer block opacity-0": true,

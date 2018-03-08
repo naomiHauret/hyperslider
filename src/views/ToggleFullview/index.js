@@ -4,6 +4,7 @@ import keyCodes from "./../../utils/keyCodes"
 export default ({ state, actions }) => (
 	<label
 		tabindex="-1"
+		className="text-grey-darker"
 		onkeydown={(e) => {
 			switch (e.keyCode) {
 				case keyCodes.enter:
