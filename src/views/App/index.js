@@ -60,8 +60,8 @@ export default ({ state, actions }) => (
 				return element.childNodes.forEach((child, index) => index === state.currentItem.position && child.focus())
 			}}
 		/>
-		{(state.isEditor === false || state.isSliderFullview === true) && (
-			<div>
+		{state.isSliderFullview === true && (
+			<div className="fixed pin-b pin-l w-full">
 				<div>
 					{state.items.map((el) => el.id === state.currentItem.id && el.position + 1)}/{state.items.length}
 				</div>

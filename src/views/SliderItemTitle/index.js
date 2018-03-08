@@ -4,6 +4,7 @@ import keyCodes from "./../../utils/keyCodes"
 export default ({ actions, state, id, title }) =>
 	state.isEditor === true ? (
 		<input
+			className="relative pin-none z-20"
 			tabindex="2"
 			value={title.text}
 			oninput={(e) => actions.editMainTitle({ id: id, text: e.target.value })}
@@ -26,5 +27,5 @@ export default ({ actions, state, id, title }) =>
 			}}
 		/>
 	) : (
-		title.text !== null && title.text.trim() !== "" && <h1>{title.text}</h1>
+		title.text !== null && title.text.trim() !== "" && <h1 className="relative pin-none z-20">{title.text}</h1>
 	)

@@ -24,20 +24,15 @@ export default ({ item, actions, state }) => {
 				${item.isDragging === true ? "is-dragged" : ""}
 				${item.isSlipZone === true ? "is-slipzone" : ""}`}
 			className={cc({
-				transition: true,
-				"w-48": state.isEditor === true && state.isSliderFullview === false,
-				"h-64": state.isEditor === true && state.isSliderFullview === false,
+				"transition relative": true,
+				"w-48 h-64 bg-grey-lighter": state.isEditor === true && state.isSliderFullview === false,
 				"cursor-move": state.isEditor === true && state.isSliderFullview === false && item.isDragging === false,
 				"cursor-grab": state.isEditor === true && state.isSliderFullview === false && item.isDragging === true,
 				hidden: (state.isSliderFullview === true || state.isEditor === false) && item.id !== state.currentItem.id,
-				"h-full": state.isEditor === false || (state.isSliderFullview === true && item.id === state.currentItem.id),
-				"w-full": state.isEditor === false || (state.isSliderFullview === true && item.id === state.currentItem.id),
-				"bg-green": item.id === state.currentItem.id,
-				"justify-center": state.isEditor === true && state.isSliderFullview === false,
-				"items-center": state.isEditor === true && state.isSliderFullview === false,
-				"items-center": state.isEditor === true && state.isSliderFullview === false,
-				"scale-down": state.isEditor === true && state.isSliderFullview === false,
-				"scale-full": state.isEditor === false || (state.isSliderFullview === true && item.id === state.currentItem.id),
+				"h-full w-full scale-full":
+					state.isEditor === false || (state.isSliderFullview === true && item.id === state.currentItem.id),
+				"justify-center items-center p-4 rounded scale-down mr-12":
+					state.isEditor === true && state.isSliderFullview === false,
 			})}
 			onclick={(e) => {
 				clickCount++

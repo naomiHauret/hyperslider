@@ -4,6 +4,7 @@ import keyCodes from "./../../utils/keyCodes"
 export default ({ actions, state, id, paragraph }) =>
 	state.isEditor === true ? (
 		<textarea
+			className="relative pin-none z-20"
 			tabindex="2"
 			value={paragraph.text}
 			oninput={(e) => actions.editParagraph({ id: id, text: e.target.value })}
@@ -20,5 +21,5 @@ export default ({ actions, state, id, paragraph }) =>
 			}}
 		/>
 	) : (
-		paragraph.text !== null && paragraph.text.trim() !== "" && <p>{paragraph.text}</p>
+		paragraph.text !== null && paragraph.text.trim() !== "" && <p className="relative pin-none z-20">{paragraph.text}</p>
 	)
