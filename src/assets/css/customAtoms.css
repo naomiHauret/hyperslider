@@ -1,0 +1,27 @@
+/*
+*   CURSORS
+*/
+.cursor-move {
+	cursor: move;
+}
+
+.cursor-grab {
+	cursor: grab;
+}
+
+/*
+*   TRANSITIONS
+*/
+.transition {
+	transition: 450ms ease-in-out all;
+}
+
+/*
+*   TRANSFORMS
+*/
+.scale-down {
+	transform: scale(0.85);
+}
+.scale-full {
+	transform: scale(1);
+}
