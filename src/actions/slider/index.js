@@ -1,9 +1,21 @@
 export default {
+	setEditorMode: ({ value }) => (state) => ({
+		isEditor: value,
+	}),
+
+	setSliderFullview: ({ value }) => (state) => ({
+		isSliderFullview: value,
+	}),
+
 	setCurrentSlide: ({ id, position }) => (state) => ({
 		currentItem: {
 			id,
 			position,
 		},
+	}),
+
+	setIsEditing: ({ value }) => (state) => ({
+		isEditing: value,
 	}),
 
 	goToPreviousSlide: ({ position }) => (state) => {

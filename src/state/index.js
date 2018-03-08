@@ -139,7 +139,7 @@ export default {
 	],
 	isEditor: true,
 	isSliderFullview: false,
-	movingElement: false,
+	isEditing: false,
 	x: 0,
 	y: 0,
 	offsetX: 0,

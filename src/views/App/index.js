@@ -1,18 +1,47 @@
 import { h } from "hyperapp"
 
+import keyCodes from "./../../utils/keyCodes"
+
 import Slider from "./../Slider"
 import ToggleMode from "./../ToggleMode"
 import ToggleFullview from "./../ToggleFullview"
+
 export default ({ state, actions }) => (
 	<main
 		className="w-full"
-		onmouseup={(e) => {
-			e.preventDefault()
-			if (state.isEditor === true && state.isSliderFullview === true) return actions.stopMoving()
-		}}
-		onmousemove={(e) => {
-			e.preventDefault()
-			if (state.isEditor === true && state.isSliderFullview === true) return actions.move({ x: e.pageX, y: e.pageY })
+		onkeydown={(e) => {
+			switch (e.keyCode) {
+				case keyCodes.previous:
+					if (state.isEditing === false) {
+						if (state.isSliderFullview === false)
+							state.currentItem.position - 1 >= 0
+								? e.target.previousSibling.focus()
+								: e.target.parentNode.lastElementChild.focus()
+						return actions.goToPreviousSlide({ position: state.currentItem.position })
+					}
+					break
+
+				case keyCodes.next:
+					if (state.isEditing === false) {
+						if (state.isSliderFullview === false)
+							state.currentItem.position + 1 < state.items.length
+								? e.target.nextSibling.focus()
+								: e.target.parentNode.firstChild.focus()
+						return actions.goToNextSlide({ position: state.currentItem.position })
+					}
+					break
+
+				case keyCodes.alt && keyCodes.number1:
+					actions.setEditorMode({ value: !state.isEditor })
+					break
+
+				case keyCodes.alt && keyCodes.number2:
+					actions.setSliderFullview({ value: !state.isSliderFullview })
+					break
+
+				default:
+					break
+			}
 		}}
 	>
 		<div className="fixed pin-t pin-r z-20">
@@ -24,7 +53,13 @@ export default ({ state, actions }) => (
 			)}
 		</div>
 
-		<Slider state={state} actions={actions} />
+		<Slider
+			state={state}
+			actions={actions}
+			onupdate={(element) => {
+				return element.childNodes.forEach((child, index) => index === state.currentItem.position && child.focus())
+			}}
+		/>
 		{(state.isEditor === false || state.isSliderFullview === true) && (
 			<div>
 				<div>

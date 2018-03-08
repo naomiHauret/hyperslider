@@ -7,7 +7,6 @@
 
 :root {
 	--fontSizeBase: 16px; /* stylelint-disable-line */
-	--red: red;
 }
 
 * {
