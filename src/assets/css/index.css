@@ -1,4 +1,5 @@
 @import "./customAtoms.css";
+@import url("https://fonts.googleapis.com/css?family=Lato|Noto+Serif");
 
 /* stylelint-disable */
 @import-normalize;
@@ -13,10 +14,40 @@
 	box-sizing: border-box;
 }
 
+*:focus {
+	outline: none;
+}
+
 html {
 	font-size: var(--fontSizeBase);
 }
 
 body {
 	font-size: 1rem;
+	@apply .font-sans;
+}
+
+button {
+	@apply .font-sans;
+	@apply .text-xl;
+	@apply .bg-transparent;
+	@apply .border-none;
+	@apply .text-white;
+
+	transition: 450ms all ease-in-out;
+	border-top: solid 0.05em white;
+	border-bottom: solid 0.05em white;
+	padding: 0.5em 1.25em;
+	letter-spacing: 0.25em;
+	mix-blend-mode: difference;
+
+	&:focus,
+	&:hover {
+		letter-spacing: 0.5em;
+	}
+}
+
+h1,
+h2 {
+	@apply .font-serif;
 }

@@ -8,7 +8,6 @@
 .cursor-grab {
 	cursor: grab;
 }
-
 /*
 *   OBJECT-FIT
 */
@@ -30,6 +29,81 @@
 .scale-down {
 	transform: scale(0.85);
 }
-.scale-full {
+
+.scale-full,
+.focus\:scale-full:focus {
 	transform: scale(1);
+}
+
+/*
+*	ANIMATION
+*/
+.shiver:focus ~ * {
+	animation: shiver infinite 950ms ease-in-out;
+}
+
+.shiver:hover ~ * {
+	padding: 0.25rem;
+}
+
+@keyframes shiver {
+	from {
+		opacity: 0.75;
+	}
+
+	to {
+		opacity: 1;
+		padding: 0.25rem;
+	}
+}
+
+/*
+*	STATE
+*/
+.is-dragged {
+	background-color: #64d5ca !important;
+}
+
+.is-dragged {
+	color: #64d5ca;
+	outline-color: currentColor;
+
+	textarea,
+	input {
+		border: none !important;
+	}
+}
+
+.is-slipzone {
+	margin-right: 10rem !important;
+	position: relative;
+	padding: 5rem;
+
+	&::after {
+		color: #64d5ca;
+		position: absolute;
+		right: -11rem;
+		top: 50%;
+		width: 10rem;
+		height: 80%;
+		content: " ";
+		border: dashed 0.25rem currentColor;
+		background-image: radial-gradient(currentColor 10%, transparent 0), radial-gradient(currentColor 10%, transparent 0);
+		background-size: 2rem 2rem;
+		background-position: 0 0, 1rem 1rem;
+		-webkit-animation: move infinite linear 650ms;
+		animation: move infinite linear 650ms;
+		transform: translateY(-50%);
+		z-index: -1;
+	}
+}
+
+@keyframes move {
+	from {
+		background-position: 0 0, 1rem 1rem;
+	}
+
+	to {
+		background-position: 1rem 1rem, 2rem 2rem;
+	}
 }

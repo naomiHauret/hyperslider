@@ -1,10 +1,16 @@
 import { h } from "hyperapp"
 import keyCodes from "./../../utils/keyCodes"
+import cc from "classcat"
 
 export default ({ actions, state, id, title }) =>
 	state.isEditor === true ? (
 		<input
-			className="relative pin-none z-20"
+			className={cc({
+				"font-sans transition relative pin-none z-20 bg-transparent": true,
+				"text-base border-t-0 border-l-0 border-r-0 border-b-2 border-grey border-dashed focus:border-solid p-2":
+					state.isSliderFullview === false,
+				"text-5xl font-serif text-white text-center border-t-0 border-l-0 border-r-0 border-b-2 border-white": state.isSliderFullview === true,
+			})}
 			tabindex="2"
 			value={title.text}
 			oninput={(e) => actions.editMainTitle({ id: id, text: e.target.value })}
@@ -27,5 +33,5 @@ export default ({ actions, state, id, title }) =>
 			}}
 		/>
 	) : (
-		title.text !== null && title.text.trim() !== "" && <h1 className="relative pin-none z-20">{title.text}</h1>
+		title.text !== null && title.text.trim() !== "" && <h1 className="relative pin-none z-20 text-5xl font-serif text-white text-center">{title.text}</h1>
 	)

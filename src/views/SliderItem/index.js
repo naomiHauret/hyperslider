@@ -18,21 +18,24 @@ export default ({ item, actions, state }) => {
 			tabindex={state.isEditor === true && state.isSliderFullview === false && "2"}
 			key={item.id}
 			active={item.isActive}
-			className={`
-					title={state.isEditor === true && "Drag me to change my position"}
-				swappable
-				${item.isDragging === true ? "is-dragged" : ""}
-				${item.isSlipZone === true ? "is-slipzone" : ""}`}
+			title={
+				state.isEditor === true &&
+				(state.isSliderFullview === false && "Drag me to change my position") &&
+				(state.isSliderFullview === false && "Drag me to change my position")
+			}
 			className={cc({
 				"transition relative": true,
-				"w-48 h-64 bg-grey-lighter": state.isEditor === true && state.isSliderFullview === false,
+				"w-64 h-64 bg-grey-lighter hover:bg-grey-light": state.isEditor === true && state.isSliderFullview === false,
 				"cursor-move": state.isEditor === true && state.isSliderFullview === false && item.isDragging === false,
 				"cursor-grab": state.isEditor === true && state.isSliderFullview === false && item.isDragging === true,
 				hidden: (state.isSliderFullview === true || state.isEditor === false) && item.id !== state.currentItem.id,
 				"h-full w-full scale-full":
 					state.isEditor === false || (state.isSliderFullview === true && item.id === state.currentItem.id),
-				"justify-center items-center p-4 rounded scale-down mr-12":
+				"justify-center items-center p-4 rounded scale-down focus:scale-full mr-12":
 					state.isEditor === true && state.isSliderFullview === false,
+				"scale-full": state.isEditor === true && state.isSliderFullview === false && item.id === state.currentItem.id,
+				"is-dragged": item.isDragging === true,
+				"is-slipzone": item.isSlipZone === true,
 			})}
 			onclick={(e) => {
 				clickCount++
@@ -117,10 +120,17 @@ export default ({ item, actions, state }) => {
 			}}
 			draggable={state.isEditor === true && state.isSliderFullview === false}
 		>
-			<SliderItemTitle actions={actions} state={state} title={item.title} id={item.id} />
-			<SliderItemSubtitle actions={actions} state={state} subtitle={item.subtitle} id={item.id} />
-			<SliderItemParagraph actions={actions} state={state} paragraph={item.paragraph} id={item.id} />
-			<SliderItemImage actions={actions} state={state} image={item.image} id={item.id} />
+			<div
+				className={cc({
+					"flex flex-col h-full": true,
+					"justify-center items-center": state.isSliderFullview === true || state.isEditor === false,
+				})}
+			>
+				<SliderItemTitle actions={actions} state={state} title={item.title} id={item.id} />
+				<SliderItemSubtitle actions={actions} state={state} subtitle={item.subtitle} id={item.id} />
+				<SliderItemParagraph actions={actions} state={state} paragraph={item.paragraph} id={item.id} />
+				<SliderItemImage actions={actions} state={state} image={item.image} id={item.id} />
+			</div>
 		</div>
 	)
 }

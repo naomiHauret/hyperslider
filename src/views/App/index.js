@@ -65,9 +65,6 @@ export default ({ state, actions }) => (
 				<div>
 					{state.items.map((el) => el.id === state.currentItem.id && el.position + 1)}/{state.items.length}
 				</div>
-				<progress className="w-full" value={state.currentItem.position} max={state.items.length - 1}>
-					{state.currentItem.position === 0 ? 1 : state.currentItem.position}
-				</progress>
 			</div>
 		)}
 		{state.isEditor === true &&

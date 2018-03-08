@@ -16,20 +16,17 @@ export default ({ state, actions, image, id }) => {
 		<div
 			className={`
 				${previewerWrapperStyle}
-				${
-					state.isSliderFullview === false && state.isEditor === true
-						? cxs({
-								bottom: "-10%",
-								right: "-15%",
-								transform: "rotate(-5deg)",
-						  })
-						: ""
-				}`}
+				${state.isSliderFullview === false ? cxs({ bottom: "-10%", right: "-15%", transform: "rotate(-5deg)" }) : ""}`}
 		>
-			<div className={cc({ "relative h-full w-full z-10 bg-grey-lightest": true })}>
+			<div className={ cc({
+					"relative h-full w-full z-10": true,
+					"bg-grey-lightest": state.isSliderFullview === false && state.isEditor === true,
+					"bg-grey-light": state.isSliderFullview === true && state.isEditor === true,
+				})}>
 				<input
 					className={cc({
 						"absolute pin-t pin-l h-full w-full z-10 cursor-pointer block opacity-0": true,
+						shiver: state.isSliderFullview === false,
 					})}
 					tabindex="2"
 					title="click to add your image"
@@ -60,17 +57,12 @@ export default ({ state, actions, image, id }) => {
 						}
 					}}
 				/>
-				<img
-					className={cc({
-						"h-full w-full object-cover rounded": true,
-					})}
-					src={image}
-				/>
+				{image !== null && <img className="h-full w-full object-cover rounded transition" src={image} />}
 			</div>
 		</div>
 	) : (
 		<div className="absolute h-full w-full pin-t pin-l">
-			<img className="block h-full w-full object-cover" src={image} />
+			{image !== null && <img className="block h-full w-full object-cover" src={image} />}
 		</div>
 	)
 }
