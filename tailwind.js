@@ -188,33 +188,8 @@ module.exports = {
   */
 
 	fonts: {
-		sans: [
-			"system-ui",
-			"BlinkMacSystemFont",
-			"-apple-system",
-			"Segoe UI",
-			"Roboto",
-			"Oxygen",
-			"Ubuntu",
-			"Cantarell",
-			"Fira Sans",
-			"Droid Sans",
-			"Helvetica Neue",
-			"sans-serif",
-		],
-		serif: [
-			"Constantia",
-			"Lucida Bright",
-			"Lucidabright",
-			"Lucida Serif",
-			"Lucida",
-			"DejaVu Serif",
-			"Bitstream Vera Serif",
-			"Liberation Serif",
-			"Georgia",
-			"serif",
-		],
-		mono: ["Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
+		sans: ["Lato", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"],
+		serif: ["Noto serif", "Georgia", "serif"],
 	},
 
 	/*
@@ -452,6 +427,7 @@ module.exports = {
 		"4/5": "80%",
 		"1/6": "16.66667%",
 		"5/6": "83.33333%",
+		sm: "740px",
 		full: "100%",
 		screen: "100vw",
 	},
@@ -487,6 +463,7 @@ module.exports = {
 		"32": "8rem",
 		"48": "12rem",
 		"64": "16rem",
+		"128": "25rem",
 		full: "100%",
 		screen: "100vh",
 	},
@@ -628,6 +605,8 @@ module.exports = {
 		"4": "1rem",
 		"6": "1.5rem",
 		"8": "2rem",
+		"10": "2.5rem",
+		"12": "3rem",
 	},
 
 	/*

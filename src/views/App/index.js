@@ -60,21 +60,12 @@ export default ({ state, actions }) => (
 				return element.childNodes.forEach((child, index) => index === state.currentItem.position && child.focus())
 			}}
 		/>
-		{(state.isEditor === false || state.isSliderFullview === true) && (
-			<div>
+		{state.isSliderFullview === true && (
+			<div className="fixed pin-b pin-l w-full text-white text-4xl font-serif text-right p-4">
 				<div>
 					{state.items.map((el) => el.id === state.currentItem.id && el.position + 1)}/{state.items.length}
 				</div>
-				<progress className="w-full" value={state.currentItem.position} max={state.items.length - 1}>
-					{state.currentItem.position === 0 ? 1 : state.currentItem.position}
-				</progress>
 			</div>
 		)}
-		{state.isEditor === true &&
-			state.isSliderFullview === false && (
-				<h1>
-					To change the order, drag and drop the card in <span> this </span> zone
-				</h1>
-			)}
 	</main>
 )

@@ -1,3 +1,7 @@
+import img1 from "./../assets/img/test1.jpg"
+import img2 from "./../assets/img/test2.jpg"
+import img3 from "./../assets/img/test3.jpg"
+
 export default {
 	items: [
 		{
@@ -32,7 +36,7 @@ export default {
 				offsetX: null,
 				offsetY: null,
 			},
-			image: "http://wpc.475d.edgecastcdn.net/00475D/facebook_cruise_heros_2/Oceans/In-Search-Northern-Lights_702x468.jpg",
+			image: img1,
 		},
 		{
 			id: 1,
@@ -66,7 +70,7 @@ export default {
 				offsetX: null,
 				offsetY: null,
 			},
-			image: "http://wpc.475d.edgecastcdn.net/00475D/facebook_cruise_heros_2/Oceans/In-Search-Northern-Lights_702x468.jpg",
+			image: img2,
 		},
 		{
 			id: 2,
@@ -134,7 +138,7 @@ export default {
 				offsetX: null,
 				offsetY: null,
 			},
-			image: "http://wpc.475d.edgecastcdn.net/00475D/facebook_cruise_heros_2/Oceans/In-Search-Northern-Lights_702x468.jpg",
+			image: img3,
 		},
 	],
 	isEditor: true,

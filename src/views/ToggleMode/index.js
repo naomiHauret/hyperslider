@@ -2,7 +2,7 @@ import { h } from "hyperapp"
 import keyCodes from "./../../utils/keyCodes"
 
 export default ({ state, actions }) => (
-	<div role="radiogroup">
+	<div role="radiogroup" className="text-grey-darker">
 		<label
 			onkeydown={(e) => {
 				switch (e.keyCode) {

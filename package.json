@@ -79,7 +79,6 @@
     ],
     "**/*.css": [
       "npx prettier --parser=css --write \"src/**/*.css\"",
-      "npx stylelint --fix \"src/**/*.css\"",
       "git add"
     ]
   }
